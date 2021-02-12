@@ -39,7 +39,29 @@ console.log(counterThree()); // 13
 console.log(counterFour()); // 4
 console.log(counterFour()); // 5
 ------------------*/
+function startingCounter(x){
+  let count = x; //Declare and initialise
+  function counter(){   //declare but don't call the closure
+    count++;
+    return count;
+  } return counter; //return new closure
+}
 
+// function startingCounter(x){
+//   let count = x; //Declare and initialise
+//   return function counter(){   //declare and return closure
+//     count++;
+//     return count;
+//   } 
+// }
+
+const counterThree = startingCounter(10);
+const counterFour = startingCounter(3);
+console.log(counterThree()); // 11
+console.log(counterThree()); // 12
+console.log(counterThree()); // 13
+console.log(counterFour()); // 4
+console.log(counterFour()); // 5
 
 /*------------------
 3)
